@@ -1,1 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Track My Treasure</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#0b0b0f;color:#fff}
+    .wrap{max-width:800px;margin:0 auto;padding:28px}
+    .card{background:#12121a;border:1px solid #23233a;border-radius:14px;padding:22px}
+    label{display:block;margin-top:12px;color:#d8d8e6}
+    input,select{width:100%;padding:10px;margin-top:6px;border-radius:10px;border:1px solid #2a2a44;background:#0f0f16;color:#fff}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{margin-top:16px;width:100%;background:#f5c84c;color:#111;padding:12px 16px;border-radius:10px;
+         border:none;font-weight:800;font-size:16px;cursor:pointer}
+    .muted{color:#b9b9c9}
+    a{color:#f5c84c}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Checkout</h1>
+    <p class="muted">Demo only — no payment collected.</p>
 
+    <div class="card">
+      <h2 id="planTitle">Selected plan</h2>
+      <p class="muted" id="planDesc"></p>
+
+      <form id="demoForm">
+        <div class="row">
+          <div>
+            <label>Full name</label>
+            <input required name="name" placeholder="Your name" />
+          </div>
+          <div>
+            <label>Email</label>
+            <input required type="email" name="email" placeholder="you@email.com" />
+          </div>
+        </div>
+
+        <label>Color</label>
+        <select name="color">
+          <option>Gold</option>
+          <option>Silver</option>
+          <option>Black</option>
+        </select>
+
+        <label>Quantity</label>
+        <input name="qty" type="number" min="1" value="1" />
+
+        <label>Shipping address (demo)</label>
+        <input name="address" placeholder="Street, City, State, ZIP" />
+
+        <p class="muted" style="margin-top:14px">
+          By placing a demo order, you understand this is not a real transaction.
+        </p>
+
+        <button class="btn" type="submit">Place Demo Order</button>
+      </form>
+
+      <p class="muted" style="margin-top:10px">
+        <a href="index.html">← Back to store</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const plan = params.get("plan") || "personal";
+    const planTitle = document.getElementById("planTitle");
+    const planDesc = document.getElementById("planDesc");
+
+    if (plan === "family") {
+      planTitle.textContent = "Family Plan — $19.99/mo (demo)";
+      planDesc.textContent = "Up to 5 trackers • shared dashboard • priority support";
+    } else {
+      planTitle.textContent = "Personal Plan — $9.99/mo (demo)";
+      planDesc.textContent = "1 tracker • app alerts • basic support";
+    }
+
+    document.getElementById("demoForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.location.href = "success.html?plan=" + encodeURIComponent(plan);
+    });
+  </script>
+</body>
+</html>
