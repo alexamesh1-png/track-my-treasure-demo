@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Track My Treasure — Demo Store</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#0b0b0f;color:#fff}
+    .wrap{max-width:1000px;margin:0 auto;padding:28px}
+    .card{background:#12121a;border:1px solid #23233a;border-radius:14px;padding:22px}
+    .grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:18px}
+    .btn{display:inline-block;background:#f5c84c;color:#111;padding:12px 16px;border-radius:10px;
+         text-decoration:none;font-weight:700}
+    .muted{color:#b9b9c9}
+    .pill{display:inline-block;border:1px solid #2e2e4a;border-radius:999px;padding:6px 10px;margin-right:8px}
+    img{max-width:100%;border-radius:12px;border:1px solid #23233a}
+    @media (max-width:820px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Track My Treasure</h1>
+    <p class="muted">Competition demo checkout — <b>no real purchases</b>.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Never lose jewelry again.</h2>
+        <p class="muted">Discreet tracker charm + app alerts when your item is left behind.</p>
+
+        <div>
+          <span class="pill">Small</span>
+          <span class="pill">Discreet</span>
+          <span class="pill">Works with chains/bracelets</span>
+        </div>
+
+        <h3 style="margin-top:18px">Choose a plan</h3>
+
+        <div class="card" style="margin-top:10px">
+          <h4 style="margin:0 0 6px 0">Personal Plan</h4>
+          <p class="muted" style="margin:0 0 10px 0">1 tracker • app alerts • basic support</p>
+          <p style="margin:0 0 10px 0"><b>$9.99/mo</b> (demo)</p>
+          <a class="btn" href="checkout.html?plan=personal">Pre-order (demo)</a>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 6px 0">Family Plan</h4>
+          <p class="muted" style="margin:0 0 10px 0">Up to 5 trackers • shared dashboard • priority support</p>
+          <p style="margin:0 0 10px 0"><b>$19.99/mo</b> (demo)</p>
+          <a class="btn" href="checkout.html?plan=family">Pre-order (demo)</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Product preview</h3>
+        <p class="muted">Replace this placeholder with your tracker image.</p>
+        <img src="https://picsum.photos/800/520" alt="Placeholder product image">
+        <p class="muted" style="margin-top:12px">
+          Tip: You can upload an image file into GitHub and change this link to match it.
+        </p>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:16px">
+      This site is a demo for judging. No payments are collected.
+    </p>
+  </div>
+</body>
+</html>
